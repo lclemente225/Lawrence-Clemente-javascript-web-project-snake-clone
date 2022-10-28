@@ -32,22 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
      //trying to make new level
     //trying to make all dimensions into modifiable variables
     
-  let LevelOne = new playArea(20, 10, 0);
+  let LevelOne = new playArea(40, 10, 0);
    
    function gridSize (x){
        switch(x){
            case 10:
-            LevelOne = new playArea(20, 10, 0);
+            LevelOne = new playArea(40, 10, 0);
             console.log('10x10');
             break;
 
             case 15:
-            LevelOne = new playArea(20, 15, 0);
+            LevelOne = new playArea(40, 15, 0);
             console.log('15x15');
             break;
 
             case 20:
-            LevelOne = new playArea(20, 20, 0);
+            LevelOne = new playArea(40, 20, 0);
             console.log('20x20');
         }
        gameBoard.style.width = LevelOne.totRowLength;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         score = LevelOne.score;
         direction = 1;
         scoreDisplay.innertext = score;
-        intervalTime = 500;
+        intervalTime = 250;
         currentSnake = [2,1,0];
         currentIndex = 0;
         currentSnake.forEach(index => squares[index].classList.add('snake'));
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     while(squares[appleIndex].classList.contains('snake'));// making sure apples don't appear on snake
     squares[appleIndex].classList.add("apple");
 }
-
+   
     document.addEventListener('keyup', control);
     startBtn.addEventListener('click', startGame); 
 
@@ -229,4 +229,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
  })
-
+ 

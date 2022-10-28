@@ -1,9 +1,15 @@
+body{
+    background-color: indigo;
+}
 h1{
     text-align: center;
 }
 /* article{
     float: left;
 } */
+.text{
+    color: white;
+}
 #game{
     display: flex;
     justify-items: center;
@@ -37,16 +43,22 @@ h1{
     border-style: solid;
 }
 .gameBoard div {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     /* border: 0.1px solid orange; */
     box-sizing: border-box;
 }
 .snake{
-    background-color: blue;
+    background-image: url('gayce.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .apple{
-    background-color: red;
+    background-image: url('dildo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 h3, span{
     text-align: center;
