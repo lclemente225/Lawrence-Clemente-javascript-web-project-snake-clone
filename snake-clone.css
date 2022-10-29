@@ -49,7 +49,7 @@ h1{
     box-sizing: border-box;
 }
 .snake{
-    background-color: red;
+    background-image: url('gayce.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

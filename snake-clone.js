@@ -110,14 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSnake = [2,1,0];
         currentIndex = 0;
         currentSnake.forEach(index => squares[index].classList.add('snake'));
-        currentSnake[0].classList.add('bro');
         interval = setInterval(moveOutcomes, intervalTime);    
         console.log(squares.parentNode);  
         console.log("starting YES");
-             let bro = document.getElementsByClassName("bro");
-             console.log(bro);
-             bro.style.backgroundImage = "url('gayce.png')";
-    }   
+        }   
 
   
     //function that deals with All the move outcomes of the Snake
