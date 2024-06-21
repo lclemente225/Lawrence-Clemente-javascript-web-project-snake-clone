@@ -9,6 +9,7 @@ h1{
 } */
 .text{
     color: white;
+    text-align: center;
 }
 #game{
     display: flex;
@@ -18,11 +19,9 @@ h1{
     flex: 1 2 10vw;
     margin-left: 80px;
     margin-right: -80px;
-    /* border: solid 0.1px black; */
 }
 #gameArea{
     justify-self: center;
-    /* border: solid 0.1px red; */
 }
 #placeholder{
     flex: 6 3 auto;
@@ -45,17 +44,16 @@ h1{
 .gameBoard div {
     width: 40px;
     height: 40px;
-    /* border: 0.1px solid orange; */
     box-sizing: border-box;
 }
 .snake{
-    background-image: url('gayce.png');
+    background-color: orange;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .apple{
-    background-image: url('dildo.png');
+    background-color: red;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

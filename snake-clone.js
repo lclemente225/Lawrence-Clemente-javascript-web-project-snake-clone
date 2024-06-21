@@ -21,13 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
     //make object constructor for the grid
    
-    class playArea{ constructor (width, rowLength, score) {         
-        this.width = width;
-        this.rowLength = rowLength;
-        this.score = score;                    
-        this.area = this.rowLength * this.rowLength;
-        this.totRowLength = this.width * this.rowLength + 'px';    
-    }}
+    class playArea{ 
+        constructor (width, rowLength, score) {         
+                this.width = width;
+                this.rowLength = rowLength;
+                this.score = score;                    
+                this.area = this.rowLength * this.rowLength;
+                this.totRowLength = this.width * this.rowLength + 'px';    
+            }
+    }
 
      //trying to make new level
     //trying to make all dimensions into modifiable variables
@@ -54,35 +56,29 @@ document.addEventListener('DOMContentLoaded', () => {
        gameBoard.style.height = LevelOne.totRowLength;
 
        scoreDisplay.textContent = 0;
-       restartGame();makeGrid();
+       restartGame();
+       makeGrid();
     }
 
 
    tenBtn.addEventListener('click', ()=>(gridSize(10)));  
-   tenBtn.addEventListener('click', console.log(10));
-     
-
    fifteenBtn.addEventListener('click', ()=>{gridSize(15)});
-   fifteenBtn.addEventListener('click', console.log(15));
-
-
    twentyBtn.addEventListener('click', ()=>{gridSize(20)});
-   twentyBtn.addEventListener('click', console.log(20));
 
      
       //this makes a board/grid size before changing it --> default 10x10  
-       gameBoard.style.width = LevelOne.totRowLength;
-        gameBoard.style.height = LevelOne.totRowLength;
+    gameBoard.style.width = LevelOne.totRowLength;
+    gameBoard.style.height = LevelOne.totRowLength;
 
     //restart game
         function restartGame(){
             //clear all div
-           if (gameBoard.hasChildNodes)
-                    {gameBoard.innerHTML = "";
+           if (gameBoard.hasChildNodes){
             console.log("no more squares");             
             clearInterval(interval); 
             scoreDisplay.textContent = 0;
-           }}
+           }
+        }
         
     //automate grid div creation
       function makeGrid(){             
@@ -91,8 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let gameSquares = document.createElement("div");
             gameSquares.className = "gameSquares";
             gameBoard.appendChild(gameSquares);
-        }}
-        makeGrid();
+        }
+    }
+    makeGrid();
 
     
     //start game
@@ -110,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSnake = [2,1,0];
         currentIndex = 0;
         currentSnake.forEach(index => squares[index].classList.add('snake'));
-        interval = setInterval(moveOutcomes, intervalTime);    
+        interval = setInterval(moveOutcomes, intervalTime);  
         console.log(squares.parentNode);  
         console.log("starting YES");
         }   
@@ -157,25 +154,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             squares[currentSnake[0]].classList.add('snake');
-    }//moveOutcomes function ends here
+    }
+    //moveOutcomes function ends here
 
 
     //assign functions to keycodes start 
     function control(e){                
         if(e.keyCode === 39 && direction !== -1){//right arrow will make snake go right one div
-            e.keycode !== -37;
+            e.keyCode !== -37;
             direction = 1;    
             console.log('right'); 
         } else if (e.keyCode === 38 && direction !== LevelOne.rowLength){//up arrow will make snake go 10 divs back, appearing to go up
-            e.keycode !== 40;
+            e.keyCode !== 40;
             direction = -LevelOne.rowLength;
             console.log('up');
         }else if(e.keyCode === 37 && direction !== 1){// left arrow will make snake go left one div
-            e.keycode !== 39;
+            e.keyCode !== 39;
             direction = -1; 
             console.log('left');
         }else if(e.keyCode === 40 && direction !== -LevelOne.rowlength){// down button then snake will go 10 divs ahead
-            e.keycode !== 38;
+            e.keyCode !== 38;
             direction = +LevelOne.rowLength;
             console.log('down');
         }
@@ -190,21 +188,24 @@ document.addEventListener('DOMContentLoaded', () => {
     while(squares[appleIndex].classList.contains('snake'));// making sure apples don't appear on snake
     squares[appleIndex].classList.add("apple");
 }
-   
+   //////////////////////////////////////////////////////////////////////
     document.addEventListener('keyup', control);
     startBtn.addEventListener('click', startGame); 
+    /////////////////////////////////////////////////////////////////////
 
+
+//buttons for phone users
     const up = document.querySelector(".up");
     const right = document.querySelector(".right");
     const down = document.querySelector(".down");
     const left = document.querySelector(".left");
 
-     up.addEventListener("click",()=>butControl(up))
-     right.addEventListener("click",()=>butControl(right))
-     down.addEventListener("click", ()=>butControl(down))
-     left.addEventListener("click", ()=>butControl(left))
+     up.addEventListener("click",()=>buttonControl(up))
+     right.addEventListener("click",()=>buttonControl(right))
+     down.addEventListener("click", ()=>buttonControl(down))
+     left.addEventListener("click", ()=>buttonControl(left))
     
-    function butControl(e){
+    function buttonControl(e){
         if (e == up && direction !== LevelOne.rowLength){
             direction = -LevelOne.rowLength;
             console.log('up');
@@ -227,6 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
+    
  })
  
