@@ -1,9 +1,16 @@
+body{
+    background-color: indigo;
+}
 h1{
     text-align: center;
 }
 /* article{
     float: left;
 } */
+.text{
+    color: white;
+    text-align: center;
+}
 #game{
     display: flex;
     justify-items: center;
@@ -12,11 +19,9 @@ h1{
     flex: 1 2 10vw;
     margin-left: 80px;
     margin-right: -80px;
-    /* border: solid 0.1px black; */
 }
 #gameArea{
     justify-self: center;
-    /* border: solid 0.1px red; */
 }
 #placeholder{
     flex: 6 3 auto;
@@ -37,16 +42,21 @@ h1{
     border-style: solid;
 }
 .gameBoard div {
-    width: 20px;
-    height: 20px;
-    /* border: 0.1px solid orange; */
+    width: 40px;
+    height: 40px;
     box-sizing: border-box;
 }
 .snake{
-    background-color: blue;
+    background-color: orange;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .apple{
     background-color: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 h3, span{
     text-align: center;
